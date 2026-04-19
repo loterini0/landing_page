@@ -1,3 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --color-cobent-blue: #0c254a;
+  --color-cobent-gray: #a4b1c0;
+  --color-cobent-white: #ffffff;
+  --color-cobent-gray-light: #d2deec;
+  --color-cobent-gray-dark: #29384b;
+  --color-cobent-gray-mid: #536174;
+}
