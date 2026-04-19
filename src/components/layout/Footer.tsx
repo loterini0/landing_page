@@ -23,9 +23,6 @@ export default function Footer() {
           {/* Marca */}
           <div>
             <span className="text-white font-bold text-lg">COBENT</span>
-            <p className="mt-2 text-sm text-cobent-gray leading-relaxed">
-              Operaciones ágiles. Crecimiento sin límites.
-            </p>
           </div>
 
           {/* Links */}
@@ -51,12 +48,6 @@ export default function Footer() {
             <ul className="space-y-2 text-sm">
               <li>Manizales, Colombia</li>
               <li>
-                <a
-                  href="mailto:hola@cobent.co"
-                  className="hover:text-white transition-colors"
-                >
-                  hola@cobent.co
-                </a>
               </li>
             </ul>
           </div>
