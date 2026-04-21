@@ -3,9 +3,18 @@
 import { useState } from "react";
 
 export default function Contact() {
-  const [form, setForm] = useState({ name: "", email: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    company: "",
+    phone: "",
+    message: "",
+    honeypot: "",
+  });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [serverError, setServerError] = useState("");
 
   const validate = () => {
     const newErrors: Record<string, string> = {};
@@ -20,11 +29,31 @@ export default function Contact() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (validate()) {
-      console.log("Formulario enviado:", form);
-      setSent(true);
+    if (!validate()) return;
+
+    setLoading(true);
+    setServerError("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        setServerError(data.error || "Error al enviar. Intenta de nuevo.");
+      } else {
+        setSent(true);
+      }
+    } catch {
+      setServerError("Error de conexión. Intenta de nuevo.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -56,6 +85,16 @@ export default function Contact() {
         {/* Card */}
         <div className="bg-white/[0.04] border border-white/[0.08] rounded-2xl p-8">
           <form onSubmit={handleSubmit} className="space-y-5">
+
+            {/* Honeypot */}
+            <input
+              type="text"
+              className="hidden"
+              tabIndex={-1}
+              autoComplete="off"
+              value={form.honeypot}
+              onChange={(e) => setForm({ ...form, honeypot: e.target.value })}
+            />
 
             {/* Nombre */}
             <div>
@@ -109,6 +148,53 @@ export default function Contact() {
               )}
             </div>
 
+            {/* Empresa */}
+            <div>
+              <label className="block text-[11px] font-semibold tracking-[0.08em] uppercase text-white/45 mb-2">
+                Empresa <span className="normal-case tracking-normal text-white/25">(opcional)</span>
+              </label>
+              <div className="relative">
+                <svg
+                  className="absolute left-3.5 top-1/2 -translate-y-1/2 opacity-35 pointer-events-none"
+                  width="16" height="16" viewBox="0 0 16 16" fill="none"
+                >
+                  <rect x="2" y="4" width="12" height="10" rx="1.5" stroke="white" strokeWidth="1.4" />
+                  <path d="M5 4V3a1 1 0 011-1h4a1 1 0 011 1v1" stroke="white" strokeWidth="1.4" />
+                  <path d="M2 8h12" stroke="white" strokeWidth="1.4" strokeLinecap="round" />
+                </svg>
+                <input
+                  type="text"
+                  placeholder="Nombre de tu empresa"
+                  className={`${inputBase} h-[46px] pl-10 pr-4`}
+                  value={form.company}
+                  onChange={(e) => setForm({ ...form, company: e.target.value })}
+                />
+              </div>
+            </div>
+
+            {/* Teléfono */}
+            <div>
+              <label className="block text-[11px] font-semibold tracking-[0.08em] uppercase text-white/45 mb-2">
+                Teléfono <span className="normal-case tracking-normal text-white/25">(opcional)</span>
+              </label>
+              <div className="relative">
+                <svg
+                  className="absolute left-3.5 top-1/2 -translate-y-1/2 opacity-35 pointer-events-none"
+                  width="16" height="16" viewBox="0 0 16 16" fill="none"
+                >
+                  <path d="M3 2.5A1.5 1.5 0 014.5 1h7A1.5 1.5 0 0113 2.5v11a1.5 1.5 0 01-1.5 1.5h-7A1.5 1.5 0 013 13.5v-11z" stroke="white" strokeWidth="1.4" />
+                  <circle cx="8" cy="12" r="0.75" fill="white" />
+                </svg>
+                <input
+                  type="tel"
+                  placeholder="+57 300 000 0000"
+                  className={`${inputBase} h-[46px] pl-10 pr-4`}
+                  value={form.phone}
+                  onChange={(e) => setForm({ ...form, phone: e.target.value })}
+                />
+              </div>
+            </div>
+
             {/* Mensaje */}
             <div>
               <label className="block text-[11px] font-semibold tracking-[0.08em] uppercase text-white/45 mb-2">
@@ -126,12 +212,18 @@ export default function Contact() {
               )}
             </div>
 
+            {/* Server error */}
+            {serverError && (
+              <p className="text-red-400 text-xs text-center">{serverError}</p>
+            )}
+
             {/* Submit */}
             <button
               type="submit"
-              className="w-full py-3.5 rounded-[10px] bg-[#2C6FFF] text-white text-sm font-semibold transition-all duration-200 hover:opacity-90 active:scale-[0.99]"
+              disabled={loading}
+              className="w-full py-3.5 rounded-[10px] bg-[#2C6FFF] text-white text-sm font-semibold transition-all duration-200 hover:opacity-90 active:scale-[0.99] disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              Enviar mensaje
+              {loading ? "Enviando..." : "Enviar mensaje"}
             </button>
 
             {/* Success */}

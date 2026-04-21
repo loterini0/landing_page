@@ -16,7 +16,7 @@ export async function POST(req: NextRequest) {
     }
 
     const body = await req.json();
-    const { name, email, company, message, phone, honeypot  } = body;
+    const { name, email, company, message, phone, honeypot } = body;
 
     if (honeypot) {
       return NextResponse.json({ success: true }, { status: 200 });
