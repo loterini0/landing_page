@@ -10,7 +10,6 @@ const links = [
   { label: "Servicios", href: "#servicios" },
   { label: "Portafolio", href: "#portafolio" },
   { label: "Nosotros", href: "#nosotros" },
-  { label: "Contacto", href: "#contacto" },
 ];
 
 export default function Navbar() {
@@ -62,15 +61,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        {/* CTA desktop */}
-        <div className="hidden md:flex items-center">
-          <Link
-            href="#contacto"
-            className="bg-cobent-blue text-white text-sm font-medium px-5 py-2 rounded-lg hover:bg-cobent-gray-dark transition-colors duration-200"
-          >
-            Agendar Demo
-          </Link>
-        </div>
+        
 
         {/* Hamburger mobile */}
         <button
@@ -99,13 +90,7 @@ export default function Navbar() {
             </Link>
           ))}
 
-          <Link
-            href="#contacto"
-            className="bg-cobent-blue text-white text-sm font-medium px-5 py-2 rounded-lg text-center hover:bg-cobent-gray-dark transition-colors"
-            onClick={() => setMenuOpen(false)}
-          >
-            Agendar Demo
-          </Link>
+          
         </div>
       )}
     </header>
