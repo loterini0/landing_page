@@ -18,11 +18,12 @@
 /* Scroll suave para navegación por anclas desde el navbar. */
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 64px;
 }
 
 /* Compensa la altura del header fijo al llegar a cada sección. */
 section[id] {
-  scroll-margin-top: 84px;
+  scroll-margin-top: 64px;
 }
 
 /* Flotación suave para tarjetas y bloques destacados. */

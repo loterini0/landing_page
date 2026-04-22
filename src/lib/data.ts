@@ -79,12 +79,54 @@ export const aboutData = {
     { title: "RESULTADOS MEDIBLES", description: "Cada implementación se orienta a métricas concretas de eficiencia." }
   ],
   team: [
-    { name: "GABRIEL EDUARDO FRANCO OBANDO", role: "CEO & SOCIO FUNDADOR" },
-    { name: "JUAN CAMILO JIMÉNEZ MORALES", role: "SOCIO FUNDADOR" },
-    { name: "JERÓNIMO TABARES GALLEGO", role: "SOCIO FUNDADOR" },
-    { name: "JUAN MANUEL LOTERO ROJO", role: "SOCIO FUNDADOR" },
-    { name: "SAMUEL MONCADA SALAZAR", role: "SOCIO FUNDADOR" },
-    { name: "ALEJANDRO TABAREZ RODRIGUEZ", role: "SOCIO FUNDADOR" }
+    {
+      name: "GABRIEL EDUARDO FRANCO OBANDO",
+      role: "CEO & SOCIO FUNDADOR",
+      photo: "/images/founders/gabriel-eduardo-franco-obando.jpg",
+      github: "",
+      email: "",
+      phone: "",
+    },
+    {
+      name: "JUAN CAMILO JIMÉNEZ MORALES",
+      role: "SOCIO FUNDADOR",
+      photo: "/images/founders/juan-camilo-jimenez-morales.jpg",
+      github: "",
+      email: "",
+      phone: "",
+    },
+    {
+      name: "JERONIMO TABARES GALLEGO",
+      role: "SOCIO FUNDADOR",
+      photo: "/images/founders/jeronimo-tabares-gallego.jpg",
+      github: "https://github.com/jetabaresg",
+      email: "jetabaresg@unal.edu.co",
+      phone: "3127983324",
+    },
+    {
+      name: "JUAN MANUEL LOTERO ROJO",
+      role: "SOCIO FUNDADOR",
+      photo: "/images/founders/juan-manuel-lotero-rojo.jpg",
+      github: "",
+      email: "",
+      phone: "",
+    },
+    {
+      name: "SAMUEL MONCADA SALAZAR",
+      role: "SOCIO FUNDADOR",
+      photo: "/images/founders/samuel-moncada-salazar.jpg",
+      github: "",
+      email: "",
+      phone: "",
+    },
+    {
+      name: "ALEJANDRO TABAREZ RODRIGUEZ",
+      role: "SOCIO FUNDADOR",
+      photo: "/images/founders/alejandro-tabarez-rodriguez.jpg",
+      github: "",
+      email: "",
+      phone: "",
+    }
   ]
 };
 export const servicesData = {
