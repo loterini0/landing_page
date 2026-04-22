@@ -19,3 +19,29 @@ export const aboutData = {
     { name: "ALEJANDRO TABAREZ RODRIGUEZ", role: "SOCIO FUNDADOR" }
   ]
 };
+export const servicesData = {
+  sectionTitle: "CAPACIDADES OPERATIVAS",
+  description: "No vendemos tecnología; vendemos el resultado de tenerla bien implementada: menos errores, mayor control y capacidad real de escala.",
+  items: [
+    {
+      title: "CONSULTORÍA Y DIAGNÓSTICO",
+      description: "Identificamos y priorizamos los procesos operativos de mayor impacto para eliminar cuellos de botella.",
+      icon: "Search" 
+    },
+    {
+      title: "DESARROLLO DE SOLUCIONES A MEDIDA",
+      description: "Diseñamos software que se ajusta al flujo real del negocio, evitando imponer estructuras rígidas.",
+      icon: "Code"
+    },
+    {
+      title: "INTEGRACIÓN DE ECOSISTEMAS",
+      description: "Conectamos y potenciamos sus herramientas existentes (POS, Excel, CRM) en un sistema unificado.",
+      icon: "Layers"
+    },
+    {
+      title: "AUTOMATIZACIÓN DE PROCESOS",
+      description: "Implementamos sistemas que ejecutan tareas críticas sin supervisión, reduciendo la dependencia manual.",
+      icon: "Cpu"
+    }
+  ]
+};
