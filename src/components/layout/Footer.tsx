@@ -6,23 +6,32 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   const links = [
-  { label: "Inicio", href: "#home" },
-  { label: "Servicios", href: "#servicios" },
-  { label: "Portafolio", href: "#portafolio" },
-  { label: "Nosotros", href: "#nosotros" },
-  { label: "Contacto", href: "#contacto" },
-];
+    { label: "Inicio", href: "#home" },
+    { label: "Servicios", href: "#servicios" },
+    { label: "Portafolio", href: "#portafolio" },
+    { label: "Nosotros", href: "#nosotros" },
+    { label: "Contacto", href: "#contacto" },
+  ];
 
   return (
     <footer className="bg-cobent-blue text-cobent-gray">
       <div className="max-w-7xl mx-auto px-6 py-12">
-        
+
         {/* Top */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
-          
+
           {/* Marca */}
-          <div>
-            <span className="text-white font-bold text-lg">COBENT</span>
+          <div className="flex flex-col gap-5">
+            <Link href="#home" className="flex items-center transition-opacity hover:opacity-80 w-fit">
+              <img
+                src="/images/portfolio/logo1.png"
+                alt="COBENT Logo"
+                className="h-24 md:h-28 w-auto object-contain brightness-0 invert"
+              />
+            </Link>
+            <p className="text-sm font-light text-white/70 leading-relaxed pr-6 mt-1">
+              Arquitecturas sólidas operativas. Referentes en automatización para empresas que necesitan escalar con visibilidad y control total.
+            </p>
           </div>
 
           {/* Links */}

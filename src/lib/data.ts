@@ -29,12 +29,12 @@ export const portfolioProjects = [
 export const credibilityStats = [
   {
     id: 1,
-    value: "+5",
+    value: "+2",
     label: "Años de experiencia",
   },
   {
     id: 2,
-    value: "+20",
+    value: "+5",
     label: "Proyectos entregados",
   },
   {
