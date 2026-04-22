@@ -36,9 +36,9 @@ export default function Testimonials() {
           </div>
 
           {/* 3D Robot Image */}
-          <div className="md:absolute right-32 top-40 md:-top-70 w-64 h-64 md:w-[550px] md:h-[550px] z-20 flex-shrink-0 group perspective-[1000px]">
+          <div className="md:absolute right-32 top-40 md:-top-38 w-64 h-64 md:w-[450px] md:h-[450px] z-20 flex-shrink-0 group perspective-[1000px]">
             <img
-              src="/images/portfolio/robot-cobent.png"
+              src="/images/portfolio/robot-cobent2.png"
               alt="Asistente IA Cobent"
               className="w-full h-full object-contain filter drop-shadow-[0_20px_30px_rgba(12,37,74,0.15)] group-hover:scale-105 transition-transform duration-500 ease-out"
             />
