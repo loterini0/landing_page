@@ -7,9 +7,9 @@ import { cn } from "@/lib/utils";
 
 const links = [
   { label: "Inicio", href: "#home" },
-  { label: "Servicios", href: "#servicios" },
+  { label: "Servicios", href: "#services" },
   { label: "Portafolio", href: "#portafolio" },
-  { label: "Nosotros", href: "#nosotros" },
+  { label: "Nosotros", href: "#about" },
 ];
 
 export default function Navbar() {
@@ -58,6 +58,7 @@ export default function Navbar() {
                   "text-sm transition-colors duration-300 hover:text-cobent-gray",
                   scrolled ? "text-cobent-gray-mid" : "text-white/80"
                 )}
+                aria-label={`Ir a ${link.label}`}
               >
                 {link.label}
               </Link>
@@ -89,6 +90,7 @@ export default function Navbar() {
               href={link.href}
               className="text-cobent-gray-mid text-sm hover:text-cobent-blue transition-colors"
               onClick={() => setMenuOpen(false)}
+              aria-label={`Ir a ${link.label}`}
             >
               {link.label}
             </Link>

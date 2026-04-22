@@ -92,7 +92,7 @@ export default function Hero() {
   }, []);
 
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#0c254a]">
+    <section id="home" className="relative w-full min-h-screen flex items-center justify-center overflow-hidden bg-[#0c254a]">
 
       {/* Radial gradient overlay for depth */}
       <div

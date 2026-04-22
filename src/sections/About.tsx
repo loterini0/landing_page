@@ -2,8 +2,9 @@ import { aboutData } from '../lib/data';
 
 const About = () => {
   return (
-    <section id="about" className="bg-cobent-surface py-24">
-      <div className="container mx-auto px-6">
+    <section id="about" className="bg-cobent-surface relative overflow-hidden py-24">
+      <div className="pointer-events-none absolute -right-24 top-20 h-64 w-64 rounded-full bg-cobent-gray-light/30 blur-3xl" />
+      <div className="container mx-auto px-6 relative">
         <div className="mb-20 text-center">
           <span className="text-cobent-gold mb-4 block text-xs font-bold tracking-[0.3em] uppercase">
             {aboutData.sectionTitle}
@@ -17,11 +18,12 @@ const About = () => {
         </div>
 
         <div className="mb-24 grid gap-12 lg:grid-cols-2">
-          <div className="bg-cobent-blue border-cobent-gold border-l-4 p-12 shadow-xl">
+          <div className="bg-cobent-blue border-cobent-gold animate-float-soft relative overflow-hidden rounded-xl border-l-4 p-12 shadow-xl">
+            <div className="animate-sweep pointer-events-none absolute inset-y-0 w-1/2 bg-gradient-to-r from-transparent via-cobent-white/10 to-transparent" />
             <h3 className="text-cobent-gold mb-6 text-sm font-bold tracking-widest uppercase">Mision</h3>
-            <p className="text-cobent-white text-xl leading-snug">{aboutData.mission}</p>
+            <p className="text-cobent-white relative text-xl leading-snug">{aboutData.mission}</p>
           </div>
-          <div className="bg-cobent-white border border-gray-200 p-12">
+          <div className="bg-cobent-white animate-float-soft motion-delay-2 rounded-xl border border-gray-200 p-12 shadow-sm">
             <h3 className="text-cobent-blue mb-6 text-sm font-bold tracking-widest uppercase">Vision</h3>
             <p className="text-cobent-gray-mid text-xl leading-snug">{aboutData.vision}</p>
           </div>
@@ -30,7 +32,7 @@ const About = () => {
         <div className="mb-24">
           <div className="grid gap-12 md:grid-cols-4">
             {aboutData.pillars.map((pillar) => (
-              <div key={pillar.title} className="group">
+              <div key={pillar.title} className="group rounded-xl border border-transparent p-4 transition-all duration-300 hover:-translate-y-1 hover:border-cobent-gray-light hover:bg-cobent-white hover:shadow-sm">
                 <h4 className="text-cobent-blue mb-3 text-sm font-bold tracking-tighter uppercase">
                   {pillar.title}
                 </h4>
