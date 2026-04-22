@@ -4,9 +4,7 @@ const About = () => {
   return (
     <section id="about" className="bg-cobent-surface py-24">
       <div className="container mx-auto px-6">
-        
-        {/* Encabezado Principal */}
-        <div className="text-center mb-20">
+        <div className="mb-20 text-center">
           <span className="text-cobent-gold mb-4 block text-xs font-bold tracking-[0.3em] uppercase">
             {aboutData.sectionTitle}
           </span>
@@ -18,20 +16,19 @@ const About = () => {
           </p>
         </div>
 
-        {/* Bloques de Misión y Visión */}
-        <div className="grid lg:grid-cols-2 gap-12 mb-24">
+        <div className="mb-24 grid gap-12 lg:grid-cols-2">
           <div className="bg-cobent-blue border-cobent-gold border-l-4 p-12 shadow-xl">
-            <h3 className="text-cobent-gold mb-6 text-sm font-bold tracking-widest uppercase">Misión</h3>
+            <h3 className="text-cobent-gold mb-6 text-sm font-bold tracking-widest uppercase">Mision</h3>
             <p className="text-cobent-white text-xl leading-snug">{aboutData.mission}</p>
           </div>
           <div className="bg-cobent-white border border-gray-200 p-12">
-            <h3 className="text-cobent-blue mb-6 text-sm font-bold tracking-widest uppercase">Visión</h3>
+            <h3 className="text-cobent-blue mb-6 text-sm font-bold tracking-widest uppercase">Vision</h3>
             <p className="text-cobent-gray-mid text-xl leading-snug">{aboutData.vision}</p>
           </div>
         </div>
 
         <div className="mb-24">
-          <div className="grid md:grid-cols-4 gap-12">
+          <div className="grid gap-12 md:grid-cols-4">
             {aboutData.pillars.map((pillar) => (
               <div key={pillar.title} className="group">
                 <h4 className="text-cobent-blue mb-3 text-sm font-bold tracking-tighter uppercase">
@@ -44,12 +41,11 @@ const About = () => {
           </div>
         </div>
 
-        {/* Listado Completo de Socios */}
-        <div className="pt-16 border-t border-gray-200">
+        <div className="border-t border-gray-200 pt-16">
           <h3 className="text-cobent-blue mb-16 text-center text-sm font-bold tracking-[0.2em] uppercase">
             Equipo de Socios Fundadores
           </h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-12 gap-x-8 max-w-5xl mx-auto">
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
             {aboutData.team.map((member) => (
               <div key={member.name} className="border-b border-gray-100 pb-4">
                 <h4 className="text-cobent-blue text-base font-bold tracking-tight uppercase">

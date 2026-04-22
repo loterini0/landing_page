@@ -155,7 +155,7 @@ export default function Hero() {
         </p>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
           <Link
             href={"#contacto"}
             className="px-8 py-3.5 rounded-full font-semibold text-sm transition-all duration-200 hover:scale-[1.03] active:scale-[0.98]"
@@ -168,22 +168,22 @@ export default function Hero() {
             Agendar demo
           </Link>
         </div>
+      </div>
 
-        {/* Social proof strip */}
-        <div
-          className="mt-16 flex items-center justify-center gap-6 flex-wrap"
-          style={{ color: "rgba(255,255,255,0.3)", fontSize: "0.78rem", letterSpacing: "0.08em" }}
-        >
-          {["Integración en tiempo real", "Sin código requerido", "Escalable por diseño"].map((label, i) => (
-            <span key={i} className="flex items-center gap-2">
-              <span
-                className="inline-block w-1.5 h-1.5 rounded-full"
-                style={{ background: "rgba(255,255,255,0.25)" }}
-              />
-              {label}
-            </span>
-          ))}
-        </div>
+      {/* Social proof strip at absolute bottom */}
+      <div
+        className="absolute bottom-12 left-0 right-0 z-20 flex flex-col md:flex-row items-center justify-center gap-6 md:gap-8 px-6"
+        style={{ color: "rgba(255,255,255,0.4)", fontSize: "0.8rem", letterSpacing: "0.08em" }}
+      >
+        {["Integración en tiempo real", "Sin código requerido", "Escalable por diseño"].map((label, i) => (
+          <span key={i} className="flex items-center gap-2">
+            <span
+              className="inline-block w-1.5 h-1.5 rounded-full"
+              style={{ background: "rgba(255,255,255,0.3)" }}
+            />
+            {label}
+          </span>
+        ))}
       </div>
 
       {/* Bottom fade */}

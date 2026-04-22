@@ -36,12 +36,16 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           href="#home"
-          className={cn(
-            "font-bold text-xl tracking-tight transition-colors duration-300",
-            scrolled ? "text-cobent-blue" : "text-white"
-          )}
+          className="flex items-center transition-opacity hover:opacity-80"
         >
-          COBENT
+          <img 
+            src="/images/portfolio/logo1.png" 
+            alt="COBENT Logo" 
+            className={cn(
+              "h-12 w-auto object-contain transition-all duration-300",
+              !scrolled && "brightness-0 invert"
+            )}
+          />
         </Link>
 
         {/* Links desktop */}
